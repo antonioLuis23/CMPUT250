@@ -103,28 +103,7 @@
                         <Types>
                           <Type>Item</Type>
                         </Types>
-                        <Binding flavour="reference">
-                          <KnowIt>
-                            <Name>Item Lost</Name>
-                            <Labels/>
-                            <Types>
-                              <Type>Item</Type>
-                            </Types>
-                            <Binding flavour="function">
-                              <ScriptIt>
-                                <Name>Item Lost</Name>
-                                <Labels/>
-                                <Children/>
-                                <CodeBlocks>
-                                  <CodeBlockReference>
-                                    <Name>Item Lost</Name>
-                                    <Labels/>
-                                  </CodeBlockReference>
-                                </CodeBlocks>
-                              </ScriptIt>
-                            </Binding>
-                          </KnowIt>
-                        </Binding>
+                        <Binding reference="/Story/StartStoryPoint/Successors/StoryPoint/Children/CauseIt/Children/ScriptIt/CodeBlocks/CodeBlockReference/Parameters/KnowIt/Binding"/>
                       </KnowIt>
                       <KnowIt>
                         <Name>Charges</Name>
