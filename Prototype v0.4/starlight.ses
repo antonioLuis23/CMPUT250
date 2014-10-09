@@ -1,0 +1,1274 @@
+<Story name="starlight" author="antonio luis" description="game">
+  <Version>2.8</Version>
+  <Translator>Neverwinter Nights</Translator>
+  <OptionalLibraries/>
+  <GameModule>C:\GOG Games\Neverwinter Nights Diamond Edition\modules\Starlight v03.mod</GameModule>
+  <Dialogues/>
+  <StartStoryPoint library="NO LIBRARY">
+    <Name>Start</Name>
+    <Labels/>
+    <Children>
+      <Note library="ScriptEase">
+        <Name>You can&apos;t put story components in here. Add a new story point instead!</Name>
+        <Description>You can&apos;t put story components in here. Add a new story point instead!</Description>
+        <Labels/>
+      </Note>
+    </Children>
+    <Successors>
+      <StoryPoint library="NO LIBRARY">
+        <Name>lever1</Name>
+        <Labels/>
+        <Children>
+          <CauseIt>
+            <Name>When &lt;subject&gt; is used by &lt;last user&gt;</Name>
+            <Labels/>
+            <Children>
+              <KnowIt>
+                <Name>Is Locked</Name>
+                <Labels/>
+                <Types>
+                  <Type>Question</Type>
+                </Types>
+                <Binding flavour="function">
+                  <ScriptIt>
+                    <Name>if &lt;Lockable&gt; is locked</Name>
+                    <Visible>false</Visible>
+                    <Labels/>
+                    <Children/>
+                    <CodeBlocks>
+                      <CodeBlockReference>
+                        <Name>if &lt;Lockable&gt; is locked</Name>
+                        <Labels/>
+                        <Parameters>
+                          <KnowIt>
+                            <Name>Lockable</Name>
+                            <Labels/>
+                            <Types>
+                              <Type>Door</Type>
+                              <Type>Placeable</Type>
+                            </Types>
+                            <Binding flavour="resource">door_grate001.UTD</Binding>
+                          </KnowIt>
+                        </Parameters>
+                      </CodeBlockReference>
+                    </CodeBlocks>
+                  </ScriptIt>
+                </Binding>
+              </KnowIt>
+              <AskIt library="ScriptEase">
+                <Name>&lt;Question&gt;</Name>
+                <Labels/>
+                <Children>
+                  <StoryComponentContainer library="NO LIBRARY">
+                    <Name>Yes:</Name>
+                    <Labels/>
+                    <Children>
+                      <ScriptIt>
+                        <Name>&lt;lock and close&gt; all doors with same tag as &lt;Door&gt;</Name>
+                        <Labels>
+                          <Label>TODO</Label>
+                        </Labels>
+                        <Children/>
+                        <CodeBlocks>
+                          <CodeBlockReference>
+                            <Name>&lt;lock and close&gt; all doors with same tag as &lt;Door&gt;</Name>
+                            <Labels/>
+                            <Parameters>
+                              <KnowIt>
+                                <Name>lock and close</Name>
+                                <Labels/>
+                                <Types>
+                                  <Type>Lock Close</Type>
+                                </Types>
+                                <Binding flavour="constant">
+                                  <Type>Lock Close</Type>
+                                  <Value>FALSE</Value>
+                                </Binding>
+                              </KnowIt>
+                              <KnowIt>
+                                <Name>Door</Name>
+                                <Labels/>
+                                <Types>
+                                  <Type>Door</Type>
+                                </Types>
+                                <Binding reference="/Story/StartStoryPoint/Successors/StoryPoint/Children/CauseIt/Children/KnowIt/Binding/ScriptIt/CodeBlocks/CodeBlockReference/Parameters/KnowIt/Binding"/>
+                              </KnowIt>
+                            </Parameters>
+                          </CodeBlockReference>
+                        </CodeBlocks>
+                      </ScriptIt>
+                    </Children>
+                  </StoryComponentContainer>
+                  <StoryComponentContainer library="NO LIBRARY">
+                    <Name>No:</Name>
+                    <Labels/>
+                    <Children>
+                      <ScriptIt>
+                        <Name>&lt;lock and close&gt; all doors with same tag as &lt;Door&gt;</Name>
+                        <Labels>
+                          <Label>TODO</Label>
+                        </Labels>
+                        <Children/>
+                        <CodeBlocks>
+                          <CodeBlockReference>
+                            <Name>&lt;lock and close&gt; all doors with same tag as &lt;Door&gt;</Name>
+                            <Labels/>
+                            <Parameters>
+                              <KnowIt>
+                                <Name>lock and close</Name>
+                                <Labels/>
+                                <Types>
+                                  <Type>Lock Close</Type>
+                                </Types>
+                                <Binding flavour="constant">
+                                  <Type>Lock Close</Type>
+                                  <Value>TRUE</Value>
+                                </Binding>
+                              </KnowIt>
+                              <KnowIt>
+                                <Name>Door</Name>
+                                <Labels/>
+                                <Types>
+                                  <Type>Door</Type>
+                                </Types>
+                                <Binding reference="/Story/StartStoryPoint/Successors/StoryPoint/Children/CauseIt/Children/KnowIt/Binding/ScriptIt/CodeBlocks/CodeBlockReference/Parameters/KnowIt/Binding"/>
+                              </KnowIt>
+                            </Parameters>
+                          </CodeBlockReference>
+                        </CodeBlocks>
+                      </ScriptIt>
+                    </Children>
+                  </StoryComponentContainer>
+                </Children>
+                <Condition>
+                  <KnowIt library="ScriptEase">
+                    <Name>Question</Name>
+                    <Labels/>
+                    <Types>
+                      <Type>Question</Type>
+                    </Types>
+                    <Binding flavour="reference">
+                      <KnowIt reference="/Story/StartStoryPoint/Successors/StoryPoint/Children/CauseIt/Children/KnowIt"/>
+                    </Binding>
+                  </KnowIt>
+                </Condition>
+              </AskIt>
+              <KnowIt>
+                <Name>Is Locked 1</Name>
+                <Labels/>
+                <Types>
+                  <Type>Question</Type>
+                </Types>
+                <Binding flavour="function">
+                  <ScriptIt>
+                    <Name>if &lt;Lockable&gt; is locked</Name>
+                    <Visible>false</Visible>
+                    <Labels/>
+                    <Children/>
+                    <CodeBlocks>
+                      <CodeBlockReference>
+                        <Name>if &lt;Lockable&gt; is locked</Name>
+                        <Labels/>
+                        <Parameters>
+                          <KnowIt>
+                            <Name>Lockable</Name>
+                            <Labels/>
+                            <Types>
+                              <Type>Door</Type>
+                              <Type>Placeable</Type>
+                            </Types>
+                            <Binding flavour="resource">door_grate003.UTD</Binding>
+                          </KnowIt>
+                        </Parameters>
+                      </CodeBlockReference>
+                    </CodeBlocks>
+                  </ScriptIt>
+                </Binding>
+              </KnowIt>
+              <AskIt library="ScriptEase">
+                <Name>&lt;Question&gt;</Name>
+                <Labels/>
+                <Children>
+                  <StoryComponentContainer library="NO LIBRARY">
+                    <Name>Yes:</Name>
+                    <Labels/>
+                    <Children>
+                      <ScriptIt>
+                        <Name>&lt;lock and close&gt; all doors with same tag as &lt;Door&gt;</Name>
+                        <Labels>
+                          <Label>TODO</Label>
+                        </Labels>
+                        <Children/>
+                        <CodeBlocks>
+                          <CodeBlockReference>
+                            <Name>&lt;lock and close&gt; all doors with same tag as &lt;Door&gt;</Name>
+                            <Labels/>
+                            <Parameters>
+                              <KnowIt>
+                                <Name>lock and close</Name>
+                                <Labels/>
+                                <Types>
+                                  <Type>Lock Close</Type>
+                                </Types>
+                                <Binding flavour="constant">
+                                  <Type>Lock Close</Type>
+                                  <Value>FALSE</Value>
+                                </Binding>
+                              </KnowIt>
+                              <KnowIt>
+                                <Name>Door</Name>
+                                <Labels/>
+                                <Types>
+                                  <Type>Door</Type>
+                                </Types>
+                                <Binding reference="/Story/StartStoryPoint/Successors/StoryPoint/Children/CauseIt/Children/KnowIt[2]/Binding/ScriptIt/CodeBlocks/CodeBlockReference/Parameters/KnowIt/Binding"/>
+                              </KnowIt>
+                            </Parameters>
+                          </CodeBlockReference>
+                        </CodeBlocks>
+                      </ScriptIt>
+                      <ScriptIt>
+                        <Name>Animate &lt;Placeable&gt; to &lt;Animation&gt;</Name>
+                        <Labels>
+                          <Label>TODO</Label>
+                        </Labels>
+                        <Children/>
+                        <CodeBlocks>
+                          <CodeBlockReference>
+                            <Name>Animate &lt;Placeable&gt; to &lt;Animation&gt;</Name>
+                            <Labels/>
+                            <Parameters>
+                              <KnowIt>
+                                <Name>Placeable</Name>
+                                <Labels/>
+                                <Types>
+                                  <Type>Placeable</Type>
+                                </Types>
+                                <Binding flavour="resource">flrlever002.UTP</Binding>
+                              </KnowIt>
+                              <KnowIt>
+                                <Name>Animation</Name>
+                                <Labels/>
+                                <Types>
+                                  <Type>Placeable Animation</Type>
+                                </Types>
+                                <Binding flavour="constant">
+                                  <Type>Placeable Animation</Type>
+                                  <Value>ANIMATION_PLACEABLE_ACTIVATE</Value>
+                                </Binding>
+                              </KnowIt>
+                            </Parameters>
+                          </CodeBlockReference>
+                        </CodeBlocks>
+                      </ScriptIt>
+                    </Children>
+                  </StoryComponentContainer>
+                  <StoryComponentContainer library="NO LIBRARY">
+                    <Name>No:</Name>
+                    <Labels/>
+                    <Children>
+                      <ScriptIt>
+                        <Name>&lt;lock and close&gt; all doors with same tag as &lt;Door&gt;</Name>
+                        <Labels>
+                          <Label>TODO</Label>
+                        </Labels>
+                        <Children/>
+                        <CodeBlocks>
+                          <CodeBlockReference>
+                            <Name>&lt;lock and close&gt; all doors with same tag as &lt;Door&gt;</Name>
+                            <Labels/>
+                            <Parameters>
+                              <KnowIt>
+                                <Name>lock and close</Name>
+                                <Labels/>
+                                <Types>
+                                  <Type>Lock Close</Type>
+                                </Types>
+                                <Binding flavour="constant">
+                                  <Type>Lock Close</Type>
+                                  <Value>TRUE</Value>
+                                </Binding>
+                              </KnowIt>
+                              <KnowIt>
+                                <Name>Door</Name>
+                                <Labels/>
+                                <Types>
+                                  <Type>Door</Type>
+                                </Types>
+                                <Binding reference="/Story/StartStoryPoint/Successors/StoryPoint/Children/CauseIt/Children/KnowIt[2]/Binding/ScriptIt/CodeBlocks/CodeBlockReference/Parameters/KnowIt/Binding"/>
+                              </KnowIt>
+                            </Parameters>
+                          </CodeBlockReference>
+                        </CodeBlocks>
+                      </ScriptIt>
+                      <ScriptIt>
+                        <Name>Animate &lt;Placeable&gt; to &lt;Animation&gt;</Name>
+                        <Labels>
+                          <Label>TODO</Label>
+                        </Labels>
+                        <Children/>
+                        <CodeBlocks>
+                          <CodeBlockReference>
+                            <Name>Animate &lt;Placeable&gt; to &lt;Animation&gt;</Name>
+                            <Labels/>
+                            <Parameters>
+                              <KnowIt>
+                                <Name>Placeable</Name>
+                                <Labels/>
+                                <Types>
+                                  <Type>Placeable</Type>
+                                </Types>
+                                <Binding flavour="resource">flrlever002.UTP</Binding>
+                              </KnowIt>
+                              <KnowIt>
+                                <Name>Animation</Name>
+                                <Labels/>
+                                <Types>
+                                  <Type>Placeable Animation</Type>
+                                </Types>
+                                <Binding flavour="constant">
+                                  <Type>Placeable Animation</Type>
+                                  <Value>ANIMATION_PLACEABLE_DEACTIVATE</Value>
+                                </Binding>
+                              </KnowIt>
+                            </Parameters>
+                          </CodeBlockReference>
+                        </CodeBlocks>
+                      </ScriptIt>
+                    </Children>
+                  </StoryComponentContainer>
+                </Children>
+                <Condition>
+                  <KnowIt library="ScriptEase">
+                    <Name>Question</Name>
+                    <Labels/>
+                    <Types>
+                      <Type>Question</Type>
+                    </Types>
+                    <Binding flavour="reference">
+                      <KnowIt reference="/Story/StartStoryPoint/Successors/StoryPoint/Children/CauseIt/Children/KnowIt[2]"/>
+                    </Binding>
+                  </KnowIt>
+                </Condition>
+              </AskIt>
+              <KnowIt>
+                <Name>Current Active</Name>
+                <Labels/>
+                <Types>
+                  <Type>Question</Type>
+                </Types>
+                <Binding flavour="function">
+                  <ScriptIt>
+                    <Name>if current story point is active</Name>
+                    <Visible>false</Visible>
+                    <Labels/>
+                    <Children/>
+                    <CodeBlocks>
+                      <CodeBlockReference>
+                        <Name>if current story point is active</Name>
+                        <Labels/>
+                        <Parameters>
+                          <KnowIt>
+                            <Name>story point</Name>
+                            <Labels/>
+                            <Types>
+                              <Type>Story Point</Type>
+                            </Types>
+                            <Binding flavour="automatic"/>
+                          </KnowIt>
+                        </Parameters>
+                      </CodeBlockReference>
+                    </CodeBlocks>
+                  </ScriptIt>
+                </Binding>
+              </KnowIt>
+              <AskIt library="ScriptEase">
+                <Name>&lt;Question&gt;</Name>
+                <Labels/>
+                <Children>
+                  <StoryComponentContainer library="NO LIBRARY">
+                    <Name>Yes:</Name>
+                    <Labels/>
+                    <Children/>
+                  </StoryComponentContainer>
+                  <StoryComponentContainer library="NO LIBRARY">
+                    <Name>No:</Name>
+                    <Labels/>
+                    <Children/>
+                  </StoryComponentContainer>
+                </Children>
+                <Condition>
+                  <KnowIt library="ScriptEase">
+                    <Name>Question</Name>
+                    <Labels/>
+                    <Types>
+                      <Type>Question</Type>
+                    </Types>
+                    <Binding flavour="reference">
+                      <KnowIt reference="/Story/StartStoryPoint/Successors/StoryPoint/Children/CauseIt/Children/KnowIt[3]"/>
+                    </Binding>
+                  </KnowIt>
+                </Condition>
+              </AskIt>
+            </Children>
+            <CodeBlocks>
+              <CodeBlockReference>
+                <Name>When &lt;subject&gt; is used by &lt;last user&gt;</Name>
+                <Labels/>
+                <Parameters>
+                  <KnowIt>
+                    <Name>subject</Name>
+                    <Labels/>
+                    <Types>
+                      <Type>Placeable</Type>
+                    </Types>
+                    <Binding flavour="resource">flrlever002.UTP</Binding>
+                  </KnowIt>
+                </Parameters>
+              </CodeBlockReference>
+            </CodeBlocks>
+          </CauseIt>
+        </Children>
+        <Successors>
+          <StoryPoint library="NO LIBRARY">
+            <Name>lever2</Name>
+            <Labels/>
+            <Children>
+              <CauseIt>
+                <Name>When &lt;subject&gt; is used by &lt;last user&gt;</Name>
+                <Labels/>
+                <Children>
+                  <KnowIt>
+                    <Name>Is Locked</Name>
+                    <Labels/>
+                    <Types>
+                      <Type>Question</Type>
+                    </Types>
+                    <Binding flavour="function">
+                      <ScriptIt>
+                        <Name>if &lt;Lockable&gt; is locked</Name>
+                        <Visible>false</Visible>
+                        <Labels/>
+                        <Children/>
+                        <CodeBlocks>
+                          <CodeBlockReference>
+                            <Name>if &lt;Lockable&gt; is locked</Name>
+                            <Labels/>
+                            <Parameters>
+                              <KnowIt>
+                                <Name>Lockable</Name>
+                                <Labels/>
+                                <Types>
+                                  <Type>Door</Type>
+                                  <Type>Placeable</Type>
+                                </Types>
+                                <Binding flavour="resource">door_grate001.UTD</Binding>
+                              </KnowIt>
+                            </Parameters>
+                          </CodeBlockReference>
+                        </CodeBlocks>
+                      </ScriptIt>
+                    </Binding>
+                  </KnowIt>
+                  <AskIt library="ScriptEase">
+                    <Name>&lt;Question&gt;</Name>
+                    <Labels/>
+                    <Children>
+                      <StoryComponentContainer library="NO LIBRARY">
+                        <Name>Yes:</Name>
+                        <Labels/>
+                        <Children>
+                          <ScriptIt>
+                            <Name>&lt;lock and close&gt; all doors with same tag as &lt;Door&gt;</Name>
+                            <Labels>
+                              <Label>TODO</Label>
+                            </Labels>
+                            <Children/>
+                            <CodeBlocks>
+                              <CodeBlockReference>
+                                <Name>&lt;lock and close&gt; all doors with same tag as &lt;Door&gt;</Name>
+                                <Labels/>
+                                <Parameters>
+                                  <KnowIt>
+                                    <Name>lock and close</Name>
+                                    <Labels/>
+                                    <Types>
+                                      <Type>Lock Close</Type>
+                                    </Types>
+                                    <Binding flavour="constant">
+                                      <Type>Lock Close</Type>
+                                      <Value>FALSE</Value>
+                                    </Binding>
+                                  </KnowIt>
+                                  <KnowIt>
+                                    <Name>Door</Name>
+                                    <Labels/>
+                                    <Types>
+                                      <Type>Door</Type>
+                                    </Types>
+                                    <Binding flavour="resource">door_grate001.UTD</Binding>
+                                  </KnowIt>
+                                </Parameters>
+                              </CodeBlockReference>
+                            </CodeBlocks>
+                          </ScriptIt>
+                        </Children>
+                      </StoryComponentContainer>
+                      <StoryComponentContainer library="NO LIBRARY">
+                        <Name>No:</Name>
+                        <Labels/>
+                        <Children>
+                          <ScriptIt>
+                            <Name>&lt;lock and close&gt; all doors with same tag as &lt;Door&gt;</Name>
+                            <Labels>
+                              <Label>TODO</Label>
+                            </Labels>
+                            <Children/>
+                            <CodeBlocks>
+                              <CodeBlockReference>
+                                <Name>&lt;lock and close&gt; all doors with same tag as &lt;Door&gt;</Name>
+                                <Labels/>
+                                <Parameters>
+                                  <KnowIt>
+                                    <Name>lock and close</Name>
+                                    <Labels/>
+                                    <Types>
+                                      <Type>Lock Close</Type>
+                                    </Types>
+                                    <Binding flavour="constant">
+                                      <Type>Lock Close</Type>
+                                      <Value>TRUE</Value>
+                                    </Binding>
+                                  </KnowIt>
+                                  <KnowIt>
+                                    <Name>Door</Name>
+                                    <Labels/>
+                                    <Types>
+                                      <Type>Door</Type>
+                                    </Types>
+                                    <Binding flavour="resource">door_grate001.UTD</Binding>
+                                  </KnowIt>
+                                </Parameters>
+                              </CodeBlockReference>
+                            </CodeBlocks>
+                          </ScriptIt>
+                        </Children>
+                      </StoryComponentContainer>
+                    </Children>
+                    <Condition>
+                      <KnowIt library="ScriptEase">
+                        <Name>Question</Name>
+                        <Labels/>
+                        <Types>
+                          <Type>Question</Type>
+                        </Types>
+                        <Binding flavour="reference">
+                          <KnowIt reference="/Story/StartStoryPoint/Successors/StoryPoint/Successors/StoryPoint/Children/CauseIt/Children/KnowIt"/>
+                        </Binding>
+                      </KnowIt>
+                    </Condition>
+                  </AskIt>
+                  <KnowIt>
+                    <Name>Is Locked 1</Name>
+                    <Labels/>
+                    <Types>
+                      <Type>Question</Type>
+                    </Types>
+                    <Binding flavour="function">
+                      <ScriptIt>
+                        <Name>if &lt;Lockable&gt; is locked</Name>
+                        <Visible>false</Visible>
+                        <Labels/>
+                        <Children/>
+                        <CodeBlocks>
+                          <CodeBlockReference>
+                            <Name>if &lt;Lockable&gt; is locked</Name>
+                            <Labels/>
+                            <Parameters>
+                              <KnowIt>
+                                <Name>Lockable</Name>
+                                <Labels/>
+                                <Types>
+                                  <Type>Door</Type>
+                                  <Type>Placeable</Type>
+                                </Types>
+                                <Binding flavour="resource">doorhard004.UTD</Binding>
+                              </KnowIt>
+                            </Parameters>
+                          </CodeBlockReference>
+                        </CodeBlocks>
+                      </ScriptIt>
+                    </Binding>
+                  </KnowIt>
+                  <AskIt library="ScriptEase">
+                    <Name>&lt;Question&gt;</Name>
+                    <Labels/>
+                    <Children>
+                      <StoryComponentContainer library="NO LIBRARY">
+                        <Name>Yes:</Name>
+                        <Labels/>
+                        <Children>
+                          <ScriptIt>
+                            <Name>&lt;lock and close&gt; all doors with same tag as &lt;Door&gt;</Name>
+                            <Labels>
+                              <Label>TODO</Label>
+                            </Labels>
+                            <Children/>
+                            <CodeBlocks>
+                              <CodeBlockReference>
+                                <Name>&lt;lock and close&gt; all doors with same tag as &lt;Door&gt;</Name>
+                                <Labels/>
+                                <Parameters>
+                                  <KnowIt>
+                                    <Name>lock and close</Name>
+                                    <Labels/>
+                                    <Types>
+                                      <Type>Lock Close</Type>
+                                    </Types>
+                                    <Binding flavour="constant">
+                                      <Type>Lock Close</Type>
+                                      <Value>FALSE</Value>
+                                    </Binding>
+                                  </KnowIt>
+                                  <KnowIt>
+                                    <Name>Door</Name>
+                                    <Labels/>
+                                    <Types>
+                                      <Type>Door</Type>
+                                    </Types>
+                                    <Binding reference="/Story/StartStoryPoint/Successors/StoryPoint/Successors/StoryPoint/Children/CauseIt/Children/KnowIt[2]/Binding/ScriptIt/CodeBlocks/CodeBlockReference/Parameters/KnowIt/Binding"/>
+                                  </KnowIt>
+                                </Parameters>
+                              </CodeBlockReference>
+                            </CodeBlocks>
+                          </ScriptIt>
+                          <ScriptIt>
+                            <Name>Animate &lt;Placeable&gt; to &lt;Animation&gt;</Name>
+                            <Labels>
+                              <Label>TODO</Label>
+                            </Labels>
+                            <Children/>
+                            <CodeBlocks>
+                              <CodeBlockReference>
+                                <Name>Animate &lt;Placeable&gt; to &lt;Animation&gt;</Name>
+                                <Labels/>
+                                <Parameters>
+                                  <KnowIt>
+                                    <Name>Placeable</Name>
+                                    <Labels/>
+                                    <Types>
+                                      <Type>Placeable</Type>
+                                    </Types>
+                                    <Binding flavour="resource">flrlever003.UTP</Binding>
+                                  </KnowIt>
+                                  <KnowIt>
+                                    <Name>Animation</Name>
+                                    <Labels/>
+                                    <Types>
+                                      <Type>Placeable Animation</Type>
+                                    </Types>
+                                    <Binding flavour="constant">
+                                      <Type>Placeable Animation</Type>
+                                      <Value>ANIMATION_PLACEABLE_ACTIVATE</Value>
+                                    </Binding>
+                                  </KnowIt>
+                                </Parameters>
+                              </CodeBlockReference>
+                            </CodeBlocks>
+                          </ScriptIt>
+                        </Children>
+                      </StoryComponentContainer>
+                      <StoryComponentContainer library="NO LIBRARY">
+                        <Name>No:</Name>
+                        <Labels/>
+                        <Children>
+                          <ScriptIt>
+                            <Name>&lt;lock and close&gt; all doors with same tag as &lt;Door&gt;</Name>
+                            <Labels>
+                              <Label>TODO</Label>
+                            </Labels>
+                            <Children/>
+                            <CodeBlocks>
+                              <CodeBlockReference>
+                                <Name>&lt;lock and close&gt; all doors with same tag as &lt;Door&gt;</Name>
+                                <Labels/>
+                                <Parameters>
+                                  <KnowIt>
+                                    <Name>lock and close</Name>
+                                    <Labels/>
+                                    <Types>
+                                      <Type>Lock Close</Type>
+                                    </Types>
+                                    <Binding flavour="constant">
+                                      <Type>Lock Close</Type>
+                                      <Value>TRUE</Value>
+                                    </Binding>
+                                  </KnowIt>
+                                  <KnowIt>
+                                    <Name>Door</Name>
+                                    <Labels/>
+                                    <Types>
+                                      <Type>Door</Type>
+                                    </Types>
+                                    <Binding reference="/Story/StartStoryPoint/Successors/StoryPoint/Successors/StoryPoint/Children/CauseIt/Children/KnowIt[2]/Binding/ScriptIt/CodeBlocks/CodeBlockReference/Parameters/KnowIt/Binding"/>
+                                  </KnowIt>
+                                </Parameters>
+                              </CodeBlockReference>
+                            </CodeBlocks>
+                          </ScriptIt>
+                          <ScriptIt>
+                            <Name>Animate &lt;Placeable&gt; to &lt;Animation&gt;</Name>
+                            <Labels>
+                              <Label>TODO</Label>
+                            </Labels>
+                            <Children/>
+                            <CodeBlocks>
+                              <CodeBlockReference>
+                                <Name>Animate &lt;Placeable&gt; to &lt;Animation&gt;</Name>
+                                <Labels/>
+                                <Parameters>
+                                  <KnowIt>
+                                    <Name>Placeable</Name>
+                                    <Labels/>
+                                    <Types>
+                                      <Type>Placeable</Type>
+                                    </Types>
+                                    <Binding flavour="resource">flrlever003.UTP</Binding>
+                                  </KnowIt>
+                                  <KnowIt>
+                                    <Name>Animation</Name>
+                                    <Labels/>
+                                    <Types>
+                                      <Type>Placeable Animation</Type>
+                                    </Types>
+                                    <Binding flavour="constant">
+                                      <Type>Placeable Animation</Type>
+                                      <Value>ANIMATION_PLACEABLE_DEACTIVATE</Value>
+                                    </Binding>
+                                  </KnowIt>
+                                </Parameters>
+                              </CodeBlockReference>
+                            </CodeBlocks>
+                          </ScriptIt>
+                        </Children>
+                      </StoryComponentContainer>
+                    </Children>
+                    <Condition>
+                      <KnowIt library="ScriptEase">
+                        <Name>Question</Name>
+                        <Labels/>
+                        <Types>
+                          <Type>Question</Type>
+                        </Types>
+                        <Binding flavour="reference">
+                          <KnowIt reference="/Story/StartStoryPoint/Successors/StoryPoint/Successors/StoryPoint/Children/CauseIt/Children/KnowIt[2]"/>
+                        </Binding>
+                      </KnowIt>
+                    </Condition>
+                  </AskIt>
+                  <KnowIt>
+                    <Name>Current Active</Name>
+                    <Labels/>
+                    <Types>
+                      <Type>Question</Type>
+                    </Types>
+                    <Binding flavour="function">
+                      <ScriptIt>
+                        <Name>if current story point is active</Name>
+                        <Visible>false</Visible>
+                        <Labels/>
+                        <Children/>
+                        <CodeBlocks>
+                          <CodeBlockReference>
+                            <Name>if current story point is active</Name>
+                            <Labels/>
+                            <Parameters>
+                              <KnowIt>
+                                <Name>story point</Name>
+                                <Labels/>
+                                <Types>
+                                  <Type>Story Point</Type>
+                                </Types>
+                                <Binding reference="/Story/StartStoryPoint/Successors/StoryPoint/Children/CauseIt/Children/KnowIt[3]/Binding/ScriptIt/CodeBlocks/CodeBlockReference/Parameters/KnowIt/Binding"/>
+                              </KnowIt>
+                            </Parameters>
+                          </CodeBlockReference>
+                        </CodeBlocks>
+                      </ScriptIt>
+                    </Binding>
+                  </KnowIt>
+                  <AskIt library="ScriptEase">
+                    <Name>&lt;Question&gt;</Name>
+                    <Labels/>
+                    <Children>
+                      <StoryComponentContainer library="NO LIBRARY">
+                        <Name>Yes:</Name>
+                        <Labels/>
+                        <Children/>
+                      </StoryComponentContainer>
+                      <StoryComponentContainer library="NO LIBRARY">
+                        <Name>No:</Name>
+                        <Labels/>
+                        <Children/>
+                      </StoryComponentContainer>
+                    </Children>
+                    <Condition>
+                      <KnowIt library="ScriptEase">
+                        <Name>Question</Name>
+                        <Labels/>
+                        <Types>
+                          <Type>Question</Type>
+                        </Types>
+                        <Binding flavour="reference">
+                          <KnowIt reference="/Story/StartStoryPoint/Successors/StoryPoint/Successors/StoryPoint/Children/CauseIt/Children/KnowIt[3]"/>
+                        </Binding>
+                      </KnowIt>
+                    </Condition>
+                  </AskIt>
+                </Children>
+                <CodeBlocks>
+                  <CodeBlockReference>
+                    <Name>When &lt;subject&gt; is used by &lt;last user&gt;</Name>
+                    <Labels/>
+                    <Parameters>
+                      <KnowIt>
+                        <Name>subject</Name>
+                        <Labels/>
+                        <Types>
+                          <Type>Placeable</Type>
+                        </Types>
+                        <Binding flavour="resource">flrlever003.UTP</Binding>
+                      </KnowIt>
+                    </Parameters>
+                  </CodeBlockReference>
+                </CodeBlocks>
+              </CauseIt>
+            </Children>
+            <Successors>
+              <StoryPoint library="NO LIBRARY">
+                <Name>lever3</Name>
+                <Labels/>
+                <Children>
+                  <CauseIt>
+                    <Name>When &lt;subject&gt; is used by &lt;last user&gt;</Name>
+                    <Labels/>
+                    <Children>
+                      <KnowIt>
+                        <Name>Is Locked</Name>
+                        <Labels/>
+                        <Types>
+                          <Type>Question</Type>
+                        </Types>
+                        <Binding flavour="function">
+                          <ScriptIt>
+                            <Name>if &lt;Lockable&gt; is locked</Name>
+                            <Visible>false</Visible>
+                            <Labels/>
+                            <Children/>
+                            <CodeBlocks>
+                              <CodeBlockReference>
+                                <Name>if &lt;Lockable&gt; is locked</Name>
+                                <Labels/>
+                                <Parameters>
+                                  <KnowIt>
+                                    <Name>Lockable</Name>
+                                    <Labels/>
+                                    <Types>
+                                      <Type>Door</Type>
+                                      <Type>Placeable</Type>
+                                    </Types>
+                                    <Binding flavour="resource">door_grate001.UTD</Binding>
+                                  </KnowIt>
+                                </Parameters>
+                              </CodeBlockReference>
+                            </CodeBlocks>
+                          </ScriptIt>
+                        </Binding>
+                      </KnowIt>
+                      <AskIt library="ScriptEase">
+                        <Name>&lt;Question&gt;</Name>
+                        <Labels/>
+                        <Children>
+                          <StoryComponentContainer library="NO LIBRARY">
+                            <Name>Yes:</Name>
+                            <Labels/>
+                            <Children>
+                              <ScriptIt>
+                                <Name>&lt;lock and close&gt; all doors with same tag as &lt;Door&gt;</Name>
+                                <Labels>
+                                  <Label>TODO</Label>
+                                </Labels>
+                                <Children/>
+                                <CodeBlocks>
+                                  <CodeBlockReference>
+                                    <Name>&lt;lock and close&gt; all doors with same tag as &lt;Door&gt;</Name>
+                                    <Labels/>
+                                    <Parameters>
+                                      <KnowIt>
+                                        <Name>lock and close</Name>
+                                        <Labels/>
+                                        <Types>
+                                          <Type>Lock Close</Type>
+                                        </Types>
+                                        <Binding flavour="constant">
+                                          <Type>Lock Close</Type>
+                                          <Value>FALSE</Value>
+                                        </Binding>
+                                      </KnowIt>
+                                      <KnowIt>
+                                        <Name>Door</Name>
+                                        <Labels/>
+                                        <Types>
+                                          <Type>Door</Type>
+                                        </Types>
+                                        <Binding flavour="resource">door_grate001.UTD</Binding>
+                                      </KnowIt>
+                                    </Parameters>
+                                  </CodeBlockReference>
+                                </CodeBlocks>
+                              </ScriptIt>
+                            </Children>
+                          </StoryComponentContainer>
+                          <StoryComponentContainer library="NO LIBRARY">
+                            <Name>No:</Name>
+                            <Labels/>
+                            <Children>
+                              <ScriptIt>
+                                <Name>&lt;lock and close&gt; all doors with same tag as &lt;Door&gt;</Name>
+                                <Labels>
+                                  <Label>TODO</Label>
+                                </Labels>
+                                <Children/>
+                                <CodeBlocks>
+                                  <CodeBlockReference>
+                                    <Name>&lt;lock and close&gt; all doors with same tag as &lt;Door&gt;</Name>
+                                    <Labels/>
+                                    <Parameters>
+                                      <KnowIt>
+                                        <Name>lock and close</Name>
+                                        <Labels/>
+                                        <Types>
+                                          <Type>Lock Close</Type>
+                                        </Types>
+                                        <Binding flavour="constant">
+                                          <Type>Lock Close</Type>
+                                          <Value>TRUE</Value>
+                                        </Binding>
+                                      </KnowIt>
+                                      <KnowIt>
+                                        <Name>Door</Name>
+                                        <Labels/>
+                                        <Types>
+                                          <Type>Door</Type>
+                                        </Types>
+                                        <Binding flavour="resource">door_grate001.UTD</Binding>
+                                      </KnowIt>
+                                    </Parameters>
+                                  </CodeBlockReference>
+                                </CodeBlocks>
+                              </ScriptIt>
+                            </Children>
+                          </StoryComponentContainer>
+                        </Children>
+                        <Condition>
+                          <KnowIt library="ScriptEase">
+                            <Name>Question</Name>
+                            <Labels/>
+                            <Types>
+                              <Type>Question</Type>
+                            </Types>
+                            <Binding flavour="reference">
+                              <KnowIt reference="/Story/StartStoryPoint/Successors/StoryPoint/Successors/StoryPoint/Successors/StoryPoint/Children/CauseIt/Children/KnowIt"/>
+                            </Binding>
+                          </KnowIt>
+                        </Condition>
+                      </AskIt>
+                      <KnowIt>
+                        <Name>Is Locked 1</Name>
+                        <Labels/>
+                        <Types>
+                          <Type>Question</Type>
+                        </Types>
+                        <Binding flavour="function">
+                          <ScriptIt>
+                            <Name>if &lt;Lockable&gt; is locked</Name>
+                            <Visible>false</Visible>
+                            <Labels/>
+                            <Children/>
+                            <CodeBlocks>
+                              <CodeBlockReference>
+                                <Name>if &lt;Lockable&gt; is locked</Name>
+                                <Labels/>
+                                <Parameters>
+                                  <KnowIt>
+                                    <Name>Lockable</Name>
+                                    <Labels/>
+                                    <Types>
+                                      <Type>Door</Type>
+                                      <Type>Placeable</Type>
+                                    </Types>
+                                    <Binding flavour="resource">door_evlstone001.UTD</Binding>
+                                  </KnowIt>
+                                </Parameters>
+                              </CodeBlockReference>
+                            </CodeBlocks>
+                          </ScriptIt>
+                        </Binding>
+                      </KnowIt>
+                      <AskIt library="ScriptEase">
+                        <Name>&lt;Question&gt;</Name>
+                        <Labels/>
+                        <Children>
+                          <StoryComponentContainer library="NO LIBRARY">
+                            <Name>Yes:</Name>
+                            <Labels/>
+                            <Children>
+                              <ScriptIt>
+                                <Name>&lt;lock and close&gt; all doors with same tag as &lt;Door&gt;</Name>
+                                <Labels>
+                                  <Label>TODO</Label>
+                                </Labels>
+                                <Children/>
+                                <CodeBlocks>
+                                  <CodeBlockReference>
+                                    <Name>&lt;lock and close&gt; all doors with same tag as &lt;Door&gt;</Name>
+                                    <Labels/>
+                                    <Parameters>
+                                      <KnowIt>
+                                        <Name>lock and close</Name>
+                                        <Labels/>
+                                        <Types>
+                                          <Type>Lock Close</Type>
+                                        </Types>
+                                        <Binding flavour="constant">
+                                          <Type>Lock Close</Type>
+                                          <Value>FALSE</Value>
+                                        </Binding>
+                                      </KnowIt>
+                                      <KnowIt>
+                                        <Name>Door</Name>
+                                        <Labels/>
+                                        <Types>
+                                          <Type>Door</Type>
+                                        </Types>
+                                        <Binding reference="/Story/StartStoryPoint/Successors/StoryPoint/Successors/StoryPoint/Successors/StoryPoint/Children/CauseIt/Children/KnowIt[2]/Binding/ScriptIt/CodeBlocks/CodeBlockReference/Parameters/KnowIt/Binding"/>
+                                      </KnowIt>
+                                    </Parameters>
+                                  </CodeBlockReference>
+                                </CodeBlocks>
+                              </ScriptIt>
+                              <ScriptIt>
+                                <Name>Animate &lt;Placeable&gt; to &lt;Animation&gt;</Name>
+                                <Labels>
+                                  <Label>TODO</Label>
+                                </Labels>
+                                <Children/>
+                                <CodeBlocks>
+                                  <CodeBlockReference>
+                                    <Name>Animate &lt;Placeable&gt; to &lt;Animation&gt;</Name>
+                                    <Labels/>
+                                    <Parameters>
+                                      <KnowIt>
+                                        <Name>Placeable</Name>
+                                        <Labels/>
+                                        <Types>
+                                          <Type>Placeable</Type>
+                                        </Types>
+                                        <Binding flavour="resource">flrlever004.UTP</Binding>
+                                      </KnowIt>
+                                      <KnowIt>
+                                        <Name>Animation</Name>
+                                        <Labels/>
+                                        <Types>
+                                          <Type>Placeable Animation</Type>
+                                        </Types>
+                                        <Binding flavour="constant">
+                                          <Type>Placeable Animation</Type>
+                                          <Value>ANIMATION_PLACEABLE_ACTIVATE</Value>
+                                        </Binding>
+                                      </KnowIt>
+                                    </Parameters>
+                                  </CodeBlockReference>
+                                </CodeBlocks>
+                              </ScriptIt>
+                            </Children>
+                          </StoryComponentContainer>
+                          <StoryComponentContainer library="NO LIBRARY">
+                            <Name>No:</Name>
+                            <Labels/>
+                            <Children>
+                              <ScriptIt>
+                                <Name>&lt;lock and close&gt; all doors with same tag as &lt;Door&gt;</Name>
+                                <Labels>
+                                  <Label>TODO</Label>
+                                </Labels>
+                                <Children/>
+                                <CodeBlocks>
+                                  <CodeBlockReference>
+                                    <Name>&lt;lock and close&gt; all doors with same tag as &lt;Door&gt;</Name>
+                                    <Labels/>
+                                    <Parameters>
+                                      <KnowIt>
+                                        <Name>lock and close</Name>
+                                        <Labels/>
+                                        <Types>
+                                          <Type>Lock Close</Type>
+                                        </Types>
+                                        <Binding flavour="constant">
+                                          <Type>Lock Close</Type>
+                                          <Value>TRUE</Value>
+                                        </Binding>
+                                      </KnowIt>
+                                      <KnowIt>
+                                        <Name>Door</Name>
+                                        <Labels/>
+                                        <Types>
+                                          <Type>Door</Type>
+                                        </Types>
+                                        <Binding reference="/Story/StartStoryPoint/Successors/StoryPoint/Successors/StoryPoint/Successors/StoryPoint/Children/CauseIt/Children/KnowIt[2]/Binding/ScriptIt/CodeBlocks/CodeBlockReference/Parameters/KnowIt/Binding"/>
+                                      </KnowIt>
+                                    </Parameters>
+                                  </CodeBlockReference>
+                                </CodeBlocks>
+                              </ScriptIt>
+                              <ScriptIt>
+                                <Name>Animate &lt;Placeable&gt; to &lt;Animation&gt;</Name>
+                                <Labels>
+                                  <Label>TODO</Label>
+                                </Labels>
+                                <Children/>
+                                <CodeBlocks>
+                                  <CodeBlockReference>
+                                    <Name>Animate &lt;Placeable&gt; to &lt;Animation&gt;</Name>
+                                    <Labels/>
+                                    <Parameters>
+                                      <KnowIt>
+                                        <Name>Placeable</Name>
+                                        <Labels/>
+                                        <Types>
+                                          <Type>Placeable</Type>
+                                        </Types>
+                                        <Binding flavour="resource">flrlever004.UTP</Binding>
+                                      </KnowIt>
+                                      <KnowIt>
+                                        <Name>Animation</Name>
+                                        <Labels/>
+                                        <Types>
+                                          <Type>Placeable Animation</Type>
+                                        </Types>
+                                        <Binding flavour="constant">
+                                          <Type>Placeable Animation</Type>
+                                          <Value>ANIMATION_PLACEABLE_DEACTIVATE</Value>
+                                        </Binding>
+                                      </KnowIt>
+                                    </Parameters>
+                                  </CodeBlockReference>
+                                </CodeBlocks>
+                              </ScriptIt>
+                            </Children>
+                          </StoryComponentContainer>
+                        </Children>
+                        <Condition>
+                          <KnowIt library="ScriptEase">
+                            <Name>Question</Name>
+                            <Labels/>
+                            <Types>
+                              <Type>Question</Type>
+                            </Types>
+                            <Binding flavour="reference">
+                              <KnowIt reference="/Story/StartStoryPoint/Successors/StoryPoint/Successors/StoryPoint/Successors/StoryPoint/Children/CauseIt/Children/KnowIt[2]"/>
+                            </Binding>
+                          </KnowIt>
+                        </Condition>
+                      </AskIt>
+                      <KnowIt>
+                        <Name>Current Active</Name>
+                        <Labels/>
+                        <Types>
+                          <Type>Question</Type>
+                        </Types>
+                        <Binding flavour="function">
+                          <ScriptIt>
+                            <Name>if current story point is active</Name>
+                            <Visible>false</Visible>
+                            <Labels/>
+                            <Children/>
+                            <CodeBlocks>
+                              <CodeBlockReference>
+                                <Name>if current story point is active</Name>
+                                <Labels/>
+                                <Parameters>
+                                  <KnowIt>
+                                    <Name>story point</Name>
+                                    <Labels/>
+                                    <Types>
+                                      <Type>Story Point</Type>
+                                    </Types>
+                                    <Binding reference="/Story/StartStoryPoint/Successors/StoryPoint/Children/CauseIt/Children/KnowIt[3]/Binding/ScriptIt/CodeBlocks/CodeBlockReference/Parameters/KnowIt/Binding"/>
+                                  </KnowIt>
+                                </Parameters>
+                              </CodeBlockReference>
+                            </CodeBlocks>
+                          </ScriptIt>
+                        </Binding>
+                      </KnowIt>
+                      <AskIt library="ScriptEase">
+                        <Name>&lt;Question&gt;</Name>
+                        <Labels/>
+                        <Children>
+                          <StoryComponentContainer library="NO LIBRARY">
+                            <Name>Yes:</Name>
+                            <Labels/>
+                            <Children/>
+                          </StoryComponentContainer>
+                          <StoryComponentContainer library="NO LIBRARY">
+                            <Name>No:</Name>
+                            <Labels/>
+                            <Children/>
+                          </StoryComponentContainer>
+                        </Children>
+                        <Condition>
+                          <KnowIt library="ScriptEase">
+                            <Name>Question</Name>
+                            <Labels/>
+                            <Types>
+                              <Type>Question</Type>
+                            </Types>
+                            <Binding flavour="reference">
+                              <KnowIt reference="/Story/StartStoryPoint/Successors/StoryPoint/Successors/StoryPoint/Successors/StoryPoint/Children/CauseIt/Children/KnowIt[3]"/>
+                            </Binding>
+                          </KnowIt>
+                        </Condition>
+                      </AskIt>
+                    </Children>
+                    <CodeBlocks>
+                      <CodeBlockReference>
+                        <Name>When &lt;subject&gt; is used by &lt;last user&gt;</Name>
+                        <Labels/>
+                        <Parameters>
+                          <KnowIt>
+                            <Name>subject</Name>
+                            <Labels/>
+                            <Types>
+                              <Type>Placeable</Type>
+                            </Types>
+                            <Binding flavour="resource">flrlever004.UTP</Binding>
+                          </KnowIt>
+                        </Parameters>
+                      </CodeBlockReference>
+                    </CodeBlocks>
+                  </CauseIt>
+                </Children>
+                <Successors/>
+                <FanIn>1</FanIn>
+              </StoryPoint>
+            </Successors>
+            <FanIn>1</FanIn>
+          </StoryPoint>
+        </Successors>
+        <FanIn>1</FanIn>
+      </StoryPoint>
+    </Successors>
+    <FanIn>1</FanIn>
+  </StartStoryPoint>
+</Story>
